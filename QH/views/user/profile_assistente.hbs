@@ -1,0 +1,248 @@
+
+<div class="container mx-auto" style="margin-top: 100px;">
+    <div class="card">
+        <form method="post">
+            <div class="row">
+                <div class="col-12 col-md-12">
+                    <div class="profile-head card-header" style="text-align: center; background-color:rgb(196, 241, 255);">
+                        <h5 class="mt-5 mb-5" style="font-weight: 800; font-size: 40px">
+                            <b>Ciao <i>{{name}} {{surname}}</i>! Questo è il tuo profilo </b>
+                            <img style="width: 4cm; border-radius: 5cm;" src="https://cdn.dribbble.com/users/2788963/screenshots/6829123/characterheadgif3.gif">
+                        </h5>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body" style="background-color:rgb(225, 248, 255);">
+                <ul class="list-group list-group-flush" >
+                            <div class="row list-group-item d-flex justify-content-center" style="background-color:rgb(225, 248, 255);">
+                                <div class="col-6">
+                                    <label style="font-size: 25px; font-weight:800">Il mio ruolo</label>
+                                </div>
+                                <div class="col-6">
+                                    <i>
+                                        <p style="font-size: 20px;">{{role}}</p>
+                                    </i>
+                                </div>
+                            </div>
+                            <div class="row list-group-item d-flex justify-content-center" style="background-color:rgb(225, 248, 255);">
+                                <div class="col-6 col-md-6">
+                                    <label style="font-size: 25px; font-weight:800">Nome</label>
+                                </div>
+                                <div class="col-6 col-md-6">
+                                    <i>
+                                        <p style="font-size: 20px;">{{name}}</p>
+                                    </i>
+                                </div>
+                            </div>
+                            <div class="row list-group-item d-flex justify-content-center" style="background-color:rgb(225, 248, 255);">
+                                <div class="col-6 col-md-6">
+                                    <label style="font-size: 25px; font-weight:800">Cognome</label>
+                                </div>
+                                <div class="col-6 col-md-6">
+                                    <i>
+                                        <p style="font-size: 20px;">{{surname}}</p>
+                                    </i>
+                                </div>
+                            </div>
+                            <div class="row list-group-item d-flex justify-content-center" style="background-color:rgb(225, 248, 255);">
+                                <div class="col-6">
+                                    <label style="font-size: 25px; font-weight:800">Email</label>
+                                </div>
+                                <div class="col-6">
+                                    <i>
+                                        <p style="font-size: 15px;">{{email}}</p>
+                                    </i>
+                                </div>
+                            </div>
+                            <div class="row list-group-item d-flex justify-content-center" style="background-color:rgb(225, 248, 255);">
+                                <div class="col-6 col-md-6">
+                                    <label style="font-size: 25px; font-weight:800">Indirizzo</label>
+                                </div>
+                                <div class="col-6 col-md-6">
+                                    <i>
+                                        <p style="font-size: 20px;">{{indirizzo}}</p>
+                                    </i>
+                                </div>
+                            </div>
+                             <div class="row list-group-item d-flex justify-content-center" style="background-color:rgb(225, 248, 255);">
+                                <div class="col-12 col-md-12 d-flex justify-content-center">
+                                   <a class="btn btn-dark " href="/user/changecity" style="font-weight:600;">Cambia Residenza</a>
+                                </div>
+                            </div>
+                             </ul>
+            </div>
+        </form>
+    </div>
+    
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center mt-5">Le tue richieste <i class="fas fa-bell"></i><span class="badge">{{incoda}}</span></h1>
+    </div>
+        </div>
+    {{# if vuoto}}
+    <div class="row" style="margin-top: 1cm;">
+        <div class="col-12" style="text-align: center;">
+            <h4>Non hai ricevuto nessuna Richiesta</h4>
+        </div>
+    </div>
+    {{else}}
+     <div class="row">
+        <div class="col-12 " style="text-align: center;">
+            <a class="btn btn-warning m-3" href="#accepted">Accettate</a>
+            <a class="btn btn-warning m-3" href="#complete">Completate</a>
+            <a class="btn btn-warning m-3" href="#waiting">In coda</a>
+        </div>
+    </div>
+
+    <div class="carousel_container w3-border-bottom w3-border-black">
+        <h3 id="accepted" style="font-weight: 800;">Accettate: <span class="badge mb-3">{{accettate}}</span></h3>
+  <div class="container">
+   <div class="row">
+    <div class="col reveal-">
+     <div class="carousel" id="accettate" data-flickity='{ "wrapAround": true }'>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+
+ <div class="carousel_container w3-border-bottom w3-border-black">
+       <h3 id="complete" style="font-weight: 800;">Completate: <span class="badge mb-3">{{completate}}</span></h3>
+  <div class="container">
+   <div class="row">
+    <div class="col reveal-">
+     <div class="carousel" id="completate" data-flickity='{ "wrapAround": true }'>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+ <div class="carousel_container  w3-border-bottom w3-border-black" style="margin-bottom: 1cm;">
+        <h3 id="waiting" style="font-weight: 800;">In coda: <span class="badge mb-3">{{incoda}}</span></h3>
+  <div class="container">
+   <div class="row">
+    <div class="col reveal-">
+     <div class="carousel" id="accodate" data-flickity='{ "wrapAround": true }'>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+    {{# each orders }}
+    <input type="hidden" id="analizza{{this.stato}}">
+    <script>
+        var x = document.getElementById("analizzaaccettato");
+        if (x != null) {
+            var ris = '<div class="card carousel-cell text-white bg-success m-5 align-top" style="max-width: 30rem; border-color: black;">'+
+                    '<div class="card-header" style="font-weight: 800">Richiesta accettata</div>'+
+                    '<div class="card-body">'+
+                       ' <h6 class="card-title">{{this.from}}</h6>'+
+                       '<h6>ha bisogno di:</h6>'+
+                       '<hr>'+
+                        '{{# each this.elements}}'+
+                        '<p class="card-text">{{this.[0] }} | {{ this.[1] }} Unità</p>'+
+                        '{{/each}}'+
+                        '<hr>'+
+                        '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">'+
+                        ' <i class="fas fa-comment-dots"></i>'+
+                        '</button>'+
+                        '<input type="hidden" id="mexper" value="{{this.from}}">'+
+                        '<p class="card-text">{{this.date}}</p>'+
+                        '<hr>'+
+                        
+                        '<p class="card-text">In:</p>'+
+                        
+                        '<p class="card-text">{{this.indirizzo}}</p>'+
+                        '<a class="btn btn-success" href="/addEvent/{{this.id}}">Aggiungi a calendario </a>'+
+                        '<input type="button" onclick="return window.location.replace(\'https://localhost:3000/user/complete/{{this.id}}\');" class="btn btn-dark" value="Completata">' +
+                    '</div>'+
+                '</div>';
+                
+                
+            $("#accettate").append(ris);
+            x.remove();
+
+        }
+    </script>
+    <script>
+        var x = document.getElementById("analizzaincoda");
+        if (x != null) {
+            var ris = 
+            '<div class="card carousel-cell bg-light m-5 align-top" style="max-width: 30rem;">'+
+                    '<div class="card-header" style="font-weight: 800">Nuova richiesta</div>'+
+                    '<div class="card-body">'+
+                       ' <h6 class="card-title">{{this.from}}</h6>'+
+                       '<h6>ha bisogno di:</h6>'+
+                       '<hr>'+
+                        '{{# each this.elements}}'+
+                        '<p class="card-text">{{this.[0] }} | {{ this.[1] }} Unità</p>'+
+                        '{{/each}}'+
+                        '<hr>'+
+                        '<p class="card-text">{{this.date}}</p>'+
+                        '<hr>'+
+                        '<p class="card-text">In:</p>'+
+                        
+                        '<p class="card-text">{{this.indirizzo}}</p>'+
+                        '<div class="row">'+
+                            '<input type="button" onclick="return window.location.replace(\'https://localhost:3000/user/accept/{{this.id}}\');" class="btn btn-success m-3" value="Accetta">' +
+                            '<input type="button" onclick="return window.location.replace(\'https://localhost:3000/user/decline/{{this.id}}\');" class="btn btn-danger m-3" value="Rifiuta">' +
+                    '</div>'+
+                    '</div>'+
+                '</div>';
+                
+            $("#accodate").append(ris);
+            x.remove();
+
+        }
+    </script>
+    <script>
+        var x = document.getElementById("analizzacompletato");
+        if (x != null) {
+            var ris = '<div class="card carousel-cell bg-light m-5 align-top" style="max-width: 30rem; opacity:0.5; border-color: black">'+
+                    '<div class="card-header" style="font-weight: 800">Richiesta completata</div>'+
+                    '<div class="card-body">'+
+                       ' <h6 class="card-title">{{this.from}}</h6>'+
+                       '<h6>ha bisogno di:</h6>'+
+                       '<hr>'+
+                        '{{# each this.elements}}'+
+                        '<p class="card-text">{{this.[0] }} | {{ this.[1] }} Unità</p>'+
+                        '{{/each}}'+
+                        '<hr>'+
+                        '<p class="card-text">{{this.date}}</p>'+
+                        '<hr>'+
+                        '<p class="card-text">In:</p>'+
+                        
+                        '<p class="card-text">{{this.indirizzo}}</p>'+
+                    '</div>'+
+                '</div>';
+            $("#completate").append(ris);
+            x.remove();
+
+        }
+    </script>
+    {{/each}}
+    {{/if}}
+    <div class="messages" style="margin-bottom: 1cm; text-align:center;">
+        <h1>Messaggi ricevuti mentre offline:</h1>
+        {{# each messages }}
+        <div class="card" style="margin-bottom: 1cm;">
+            <div class="card-header">
+                Messaggio ricevuto in data: {{this.data}} <br>
+            </div>
+            <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                <p><i>{{this.messaggio}}</i></p>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    <i class="fas fa-comment-dots"></i>
+                </button>
+                <input type="hidden" id="mexper" value="{{this.to}}">
+                <footer class="blockquote-footer">{{this.from}}</footer>
+                </blockquote>
+            </div>
+        </div>
+        {{/each}}
+
+        
+       
+    </div>
+</div>

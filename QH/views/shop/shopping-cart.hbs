@@ -1,0 +1,100 @@
+
+
+		{{# if products}}
+		<div class="container" style=" margin-top: 6rem;">
+			<div class="row">
+				<div class="col-12">
+			<h1>QuarantineHelp</h1>
+			</div>
+			<div class="col-12" style="text-align: right;">
+			 <img style="width: 6cm; border-radius: 5cm;" src="https://i.pinimg.com/originals/7c/54/28/7c542823f463295feaa59ed42ad47207.gif" >
+			</div>
+			<div class="col-12">
+			<h4> Il tuo carrello: <i class="text-info font-weight-bold">{{session.cart.totalQty}}</i> prodotti</h4> 
+			</div>
+			
+				</div>
+				<br>
+			<table id="shoppingCart" class="table table-condensed table-responsive ">
+				<thead style="background-color: rgb(205, 253, 255);">
+					<tr>
+						<th style="width:60%">Prodotto</th>
+						<th style="width:10%">Quantità</th>
+						<th style="width:16%">Azioni</th>
+					</tr>
+				</thead>
+				<tbody>
+					{{# each products }}
+					<tr>
+						<td data-th="Prodotto">
+							<div class="row">
+								<div class="col-md-3 text-left">
+									<img src="{{this.item.imagePath}}" alt="" class="img-fluid d-none d-md-block rounded mb-2 shadow ">
+								</div>
+								<div class="col-md-9 text-left mt-sm-2">
+									<h4 style="font-size: 1.1rem">{{this.item.title}}</h4>
+									<p class="font-weight-light">{{this.item.description}}</p>
+								</div>
+							</div>
+						</td>
+						<td data-th="Quantità">
+							<span class=" form-control-lg text-center">{{this.qty}}</span>
+						</td>
+						<td class="actions" data-th="Azioni">
+							<div class="btn-group" role="group" aria-label="Basic example">
+								<a class="p-2 btn btn btn-secondary border-secondary btn-md mb-2"
+									href="/reduce/{{this.item.id}}">
+									<i class="fa fa-minus" style="color: black"></i>
+								</a>
+							</div>
+						</td>
+					</tr>
+					{{/each}}
+				</tbody>
+			</table>
+			<div class="row align-items-end">
+				<div class="col-12 d-flex justify-content-center">
+					<a href="/end/" class="btn btn-primary mb-4 btn-xxl pl-5 pr-5">Invia ordine</a>
+				</div>
+			</div>
+			<div class="container d-flex justify-content-center">
+			<div class="row d-flex justify-content-center alert alert-info">				
+				<div class="col-xl d-flex justify-content-center">
+						<h4>Ordinare è più facile che mai! <i class="far fa-smile-wink"></i></h4>
+					</div>
+					<div class="col-xl d-flex justify-content-center">
+						<h4>Milioni di prodotti delle più grandi marche <i class="fas fa-store-alt"></i></h4>
+					</div>
+					<div class="col-xl d-flex justify-content-center">
+						<h4>Pagamento alla consegna <i class="fas fa-truck"></i></h4>
+					</div>
+			</div>
+		</div>
+		<br>
+		<br>
+			<div class="row" style="height: 40vh;"></div>
+		</div>
+		<br>
+		
+		{{else}}
+		<div class="container" style="margin-top: 6rem; height: 80vh; margin-bottom: 100px;">
+			<div class="row d-flex justify-content-center">				
+				<div class="col-12 d-flex justify-content-center">
+						<img style="width: 2cm; border-radius: 5cm;" src="https://cdn.dribbble.com/users/2469324/screenshots/6538803/comp_3.gif">
+					</div>
+					<div class="col-12 d-flex justify-content-center alert alert-danger">
+						<h2>Ops... Sembra che tu non abbia nessun prodotto nel tuo carrello!</h2>
+					</div>
+					<div class="col-12 d-flex justify-content-center">
+						<h5>Recati nel nostro Shop super fornito per inviare un ordine!</h5>
+					</div>
+					<div class="col-12 d-flex justify-content-center">
+						<a class="btn btn-info" href="/eshop"><i class="fas fa-arrow-left mr-2"></i> Torna a fare la spesa</a>
+					</div>
+					<div class="col-12 d-flex justify-content-center mt-5">
+						<img style="width: 14cm; border-radius: 5cm;" src="https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_600,h_367/https://www.udyogmart.com/wp-content/uploads/2020/01/ezgif.com-video-to-gif.gif">
+					</div>
+			</div>
+		</div>
+		{{/if}}
+		

@@ -1,0 +1,41 @@
+<div style="height: 80vh; margin-top:2cm;">
+<div class="row mx-auto" style="margin-bottom: 0.5cm;">
+    <div class="col-md-4 col-md-offset-4 mx-auto">
+        <h1 class="text-center" style="font-size: 30px;">Prima di continuare scegli il tuo ruolo e conferma la tua
+            posizione
+        </h1>
+        {{#if hasErrors}}
+        <div class="alert alert-danger">
+            {{# each messages }}
+            <p>{{this}}</p>
+            {{/each}}
+        </div>
+        {{/if}}
+        <form id="formABC" action="/user/select" method="post">
+            <div class="form-group">
+                <label>Città</label>
+                <input type="text" id="name" name="indirizzo_citta" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label>Via</label>
+                <input type="text" name="indirizzo_via" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label>Civico</label>
+                <input type="text
+                " name="indirizzo_numero" class="form-control" required>
+            </div>
+            <p style="font-weight:800">Che ruolo vuoi assumere all'interno del sito?</p>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Scegli il tuo ruolo</label>
+                <select class="form-control" name="role">
+                    <option value="assistito">Assistito</option>
+                    <option value="assistente">Assistente</option>
+                </select>
+            </div>
+            <input type="hidden" name="_csrf" value="{{ csrfToken }}">
+            <input type="submit" id="submit" class="btn btn-primary"></input>
+        </form>
+    </div>
+</div>
+</div>
