@@ -23,7 +23,7 @@ services:
           - db
         restart: on-failure
         environment:
-          CONNECTION_URL: postgres://postgres:postgres@reti_db_1:5432/postgres
+          CONNECTION_URL: postgres://postgres:postgres@db:5432/postgres
           PORT: 3000
           MAP_KEY: AIzaSyBOpGh2i98vY0tUlDl39xe-CW0gEbK5JPA
           
