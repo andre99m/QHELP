@@ -14,6 +14,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
-      working-directory: Dockerfile
+    - name: Docker Compose Action
+      uses: isbang/compose-action@v1.4.1
+
