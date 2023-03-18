@@ -1,59 +1,68 @@
-# QHELP
+<h1 align="center">QHelp</h1>
 Progetto corso reti di calcolatori
 
-### Scopo del progetto: 
-Il progetto nasce in un contensto di pandemia per aiutare la gente bisognosa, chiusa in casa per quarantena domiciliare, al fine di mettersi in contatto con soggetti volontari ai quali richiedere beni di prima necessità. 
+<h2 align="center">Scopo del progetto</h2>
+<p>QHelp nasce in un contensto di pandemia per aiutare la gente bisognosa, chiusa in casa per quarantena domiciliare, al fine di mettersi in contatto con soggetti volontari ai quali richiedere beni di prima necessità. </p>
 
-# Tecnologie utilizzate:
-## Sviluppo server (back-end):
-- Node.js
-- Express.js
-- Handlebars Template Engine
-- Bcrypt
-- Sequelize
-- PostgreSQL
-- OAuth2
-- OpenSSL
+<h2 align="center">Architetture di riferimento e tecnologie usate</h2>
+immagine
+<h2 align="center">Soddisfacimento dei requisiti</h2>
 
-## Sviluppo client: 
-- Bootstrap 4.0
-- JQuery
-- JavaScript
-- HTML5
+1. __Il servizio REST che implementate (lo chiameremo SERV) deve offrire a terze parti delle API documentate.__ 
+    - QHelp offre API documentate tramite apiDoc, in particolare è possibile effettuare la GET sui prodotti, utenti, ordini del database, ottenendone tutta la lista o solo uno di essi con un particolare ID.
+    -  /QHELP/QH/routes/docs/index.html
 
+ 2. __SERV si deve interfacciare con almeno due servizi REST di terze parti.__ 
+    -QHelp utilizza le seguenti API esterne:
+        - Google Maps: Per geolocalizzare gli assistiti e trovare gli assistenti più vicini a loro.
+        - Google Calendar: Per inserire una richiesta in calendario alla data odierna.
 
-## API:
-- documentati con API Doc, /QHELP/QH/routes/docs/index.html
+3. __La soluzione deve prevedere l'uso di protocolli asincroni. Per esempio Websocket e/o AMQP.__ 
+    - QHelp implementa le Websocket, ne fa utilizzo per permettere agli utenti di inviarsi messaggi istantanei quando entrambi sono online.
+    
+4. __Il progetto deve prevedere l'uso di Docker e l'automazione del processo di lancio, configurazione e test.__ 
+    - Attraverso una docker compose viene cosrtuita l'intera infrastruttura del progetto, compresa web app e database locale (il quale viene popolato con alcuni prodotti a scopo illustrativo).
 
+5. __Deve essere implementata una forma di CI/CD per esempio con le Github Actions__ 
+    - Vengono implentate Github Actions per:
+        - Testing automatico delle funzionalità e della creazione dell'immagine docker.
+        - Testing automatico dei servizi API offerti (realizzato tramite mocha-chai).
 
-### Servizi REST: 
-- google maps
-- google calendar
+6. __Requisiti minimi di sicurezza devono essere considerati e documentati. Self-signed certificate sono più che sufficienti per gli scopi del progetto.__ 
+    - Le uniche richieeste accettate sono quelle via https.
 
-### Servizi REST commerciali
-- google (passport)
-- facebook (passport)
+<h2 align="center">Tecnologie utilizzate</h2>
 
-### Servizio REST eseterno con OAuth: 
-- google calendar
+1. __Node.js__ 
 
-### Protocolli asincroni: 
+ 2. __Express.js__ 
 
-- Websocket per messaggisatica istantanea online e offline
+3. __Handlebars Template Engine__ 
 
-## Istruzioni installazione:
+4. __Docker__ 
 
-Una volta scaricata la cartella sarà necessario, da terminale in /QHELP, digitare "docker-compose up" per installare tutte le dipendenze e avviare il server su docker.
+5. __OAuth__ 
+    
 
-# Istruzioni per l'installazione e il test :
-0. Scaricare il progetto e avviare Docker.
-1. Aprire un terminale nella directory principale (dove si trova il file docker-compose.yml) ed eseguire il comando: docker-compose up -d oppure (per visualizzare a schermo i log del server) docker-compose up.
-2. Dal browser visitare questa pagina: https://localhost:3000/
-3. Registrarsi localmente o attraverso google/facebook per la prima volta come assistente o assistito
-4. Effettuare un ordine (il database contiene già alcuni prodotti per il test delle funzionalità)
-5. Aggiungere ordine al calendario e completarlo successivamente
-6. Per fermare il server eseguire il comando: docker-compose stop (questo fermerà i container di Postgres e NodeJS);
-7. Per riavviare il server eseguire il comando: docker-compose start (questo avvierà i container di Postgres e NodeJS).
+6. __PostgresSQL con Sequelize__ 
+
+7. __Bootstrap 4.0__ 
+
+8. __OpenSSL__ 
+
+<h2 align="center">Istruzioni per l'installazione</h2>
+
+  1) Tramite git clonare il repository utilizzando il comando 
+  ```
+  git clone https://github.com/andre99m/QHELP.git
+  ```
+  2) Installare docker
+  3) Avviare docker
+  4) Eseguire il comando 
+  ```
+  docker-compose up
+  ```  
+  5) Aprire il browser e andare su [localhost](https://localhost:3000/);
 
 Un assistito può accedere direttamente all'eshop, aggiungengere al carrello prodotti di cui necessita e inviare la sua richiesta a un volontario. La richiesta
 verrà inviata al volontario più vicino (un algoritmo determinerà l'assistente più vicino in base agli utenti registrati come volontari nella città dell'assistito). 
@@ -65,4 +74,16 @@ all'interno della città di domicilio dell'assistito.
 
 Una richiesta inoltre può essere accettata e completata (una volta che il volontario ha soddisfatto la richiesta del proprio assistito).
 
-## Sono state implementate le github Actions
+
+
+
+- Eseguire i test digitando:
+```
+npm install 
+
+npm test
+```
+
+
+
+
