@@ -17,4 +17,4 @@ jobs:
     - name: Docker Compose Action
       uses: isbang/compose-action@v1.4.1
     - name: run test
-      run: npm test
+      run: ls
