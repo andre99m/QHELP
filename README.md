@@ -76,7 +76,7 @@ Una richiesta inoltre può essere accettata e completata (una volta che il volon
 <h2 align="center">Istruzioni per il test</h2>
 
 
-- Eseguire i test digitando nella cartella QHELP/QH:
+Eseguire i test digitando nella cartella QHELP/QH:
 ```
 npm install 
 ```
