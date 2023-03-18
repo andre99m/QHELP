@@ -79,9 +79,10 @@ Una richiesta inoltre può essere accettata e completata (una volta che il volon
 - Eseguire i test digitando nella cartella QHELP/QH:
 ```
 npm install 
-...
+```
 Per installare le dipendenze e i pacchetti usati.
-...
+
+```
 npm test
 ```
 Per eseguire il test.
