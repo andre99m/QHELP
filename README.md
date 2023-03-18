@@ -4,7 +4,7 @@ Progetto corso reti di calcolatori
 <h2 align="center">Scopo del progetto</h2>
 <p>QHelp nasce in un contensto di pandemia per aiutare la gente bisognosa, chiusa in casa per quarantena domiciliare, al fine di mettersi in contatto con soggetti volontari ai quali richiedere beni di prima necessità. </p>
 
-<h2 align="center">Architetture di riferimento e tecnologie usate</h2>
+<h2 align="center">Architetture di riferimento</h2>
 immagine
 <h2 align="center">Soddisfacimento dei requisiti</h2>
 
