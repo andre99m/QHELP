@@ -16,6 +16,8 @@ immagine
     - QHelp utilizza le seguenti API esterne:
         - Google Maps: Per geolocalizzare gli assistiti e trovare gli assistenti più vicini a loro.
         - Google Calendar: Per inserire una richiesta in calendario alla data odierna.
+        - Google: Per l'accesso degli utenti (passport)
+        - Facebook: Per l'accesso degli utenti (passport)
 
 3. __La soluzione deve prevedere l'uso di protocolli asincroni. Per esempio Websocket e/o AMQP.__ 
     - QHelp implementa le Websocket, ne fa utilizzo per permettere agli utenti di inviarsi messaggi istantanei quando entrambi sono online.
