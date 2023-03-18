@@ -13,7 +13,7 @@ immagine
     -  /QHELP/QH/routes/docs/index.html
 
  2. __SERV si deve interfacciare con almeno due servizi REST di terze parti.__ 
-    -QHelp utilizza le seguenti API esterne:
+    - QHelp utilizza le seguenti API esterne:
         - Google Maps: Per geolocalizzare gli assistiti e trovare gli assistenti più vicini a loro.
         - Google Calendar: Per inserire una richiesta in calendario alla data odierna.
 
@@ -40,9 +40,6 @@ immagine
 3. __Handlebars Template Engine__ 
 
 4. __Docker__ 
-
-5. __OAuth__ 
-    
 
 6. __PostgresSQL con Sequelize__ 
 
