@@ -23,7 +23,7 @@ immagine
     - QHelp implementa le Websocket, ne fa utilizzo per permettere agli utenti di inviarsi messaggi istantanei quando entrambi sono online.
     
 4. __Il progetto deve prevedere l'uso di Docker e l'automazione del processo di lancio, configurazione e test.__ 
-    - Attraverso una docker compose viene cosrtuita l'intera infrastruttura del progetto, compresa web app e database locale (il quale viene popolato con alcuni prodotti a scopo illustrativo).
+    - Attraverso una docker compose viene costruita l'intera infrastruttura del progetto, compresa web app e database locale (il quale viene popolato con alcuni prodotti a scopo illustrativo).
 
 5. __Deve essere implementata una forma di CI/CD per esempio con le Github Actions__ 
     - Vengono implentate Github Actions per:
@@ -57,32 +57,34 @@ immagine
   ```
   2) Installare docker
   3) Avviare docker
-  4) Eseguire il comando 
+  4) Porsi nella cartella QHelp scaricata da git ed eseguire il comando 
   ```
   docker-compose up
   ```  
   5) Aprire il browser e andare su [localhost](https://localhost:3000/);
 
-Un assistito può accedere direttamente all'eshop, aggiungengere al carrello prodotti di cui necessita e inviare la sua richiesta a un volontario. La richiesta
-verrà inviata al volontario più vicino (un algoritmo determinerà l'assistente più vicino in base agli utenti registrati come volontari nella città dell'assistito). 
+<h2 align="center">Come funziona</h2>
 
-Un assistente che riceve richieste le potrà vedere nel suo profilo, accettare o rifiutare. Una volta accettata potrà aggiungere al suo calendar l'evento i cui
-dettagli sono: mittente della richiesta e beni richiesti, con timestamp della richiesta.
+Un assistito può accedere direttamente all'eshop, aggiungengere al carrello prodotti di cui necessita e inviare la sua richiesta a un volontario. La richiesta verrà inviata al volontario più vicino (un algoritmo basato sulla posizione degli utenti determinerà l'assistente più vicino in base agli utenti registrati come volontari nella città dell'assistito). 
+
+Un assistente che riceve richieste le potrà vedere nel suo profilo, accettare o rifiutare. Una volta accettata potrà aggiungere al suo calendar l'evento i cui dettagli sono: mittente della richiesta e beni richiesti, con timestamp della richiesta.
 Se un assistente rifiuta una richiesta, questa viene inoltrata al secondo assisstene più vicino all'assistito, così fino a quando non finiscono i volontari
 all'interno della città di domicilio dell'assistito.
 
 Una richiesta inoltre può essere accettata e completata (una volta che il volontario ha soddisfatto la richiesta del proprio assistito).
 
+<h2 align="center">Istruzioni per il test</h2>
 
 
-
-- Eseguire i test digitando:
+- Eseguire i test digitando nella cartella QHELP/QH:
 ```
 npm install 
-
+...
+Per installare le dipendenze e i pacchetti usati.
+...
 npm test
 ```
-
+Per eseguire il test.
 
 
 
