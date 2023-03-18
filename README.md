@@ -6,7 +6,7 @@ Progetto corso reti di calcolatori
 
 <h2 align="center">Architetture di riferimento</h2>
 <p align="center">
-  <img width="50%" src="  https://raw.githubusercontent.com/andre99m/QHELP/main/SCHEMA.jpeg" alt="logo">
+  <img width="50%" src="https://raw.githubusercontent.com/andre99m/QHELP/main/SCHEMA.jpeg" alt="logo">
 </p>
 <h2 align="center">Soddisfacimento dei requisiti</h2>
 
