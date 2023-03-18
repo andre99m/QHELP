@@ -6,7 +6,7 @@ Progetto corso reti di calcolatori
 
 <h2 align="center">Architetture di riferimento</h2>
 <p align="center">
-  <img width="50%" src="https://raw.githubusercontent.com/StudentsHUBProject/StudentsHUB/master/assets/img/FinalHomeW.png" alt="StudentsHUB: logo">
+  <img width="50%" src=" https://github.com/andre99m/QHELP/blob/4853d5c3849ddf2684c8f3253b7d2d1c6f5a7be4/SCHEMA.jpeg" alt="StudentsHUB: logo">
 </p>
 <h2 align="center">Soddisfacimento dei requisiti</h2>
 
