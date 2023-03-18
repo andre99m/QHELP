@@ -87,5 +87,5 @@ npm test
 ```
 Per eseguire il test.
 
-
-
+<h2 align="center">Autore</h2>
+Andrea Mason (1862553)
