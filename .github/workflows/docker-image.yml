@@ -18,4 +18,5 @@ jobs:
       uses: isbang/compose-action@v1.4.1
     - name: run test
       run: cd QH
+    - name: test
       run: npm test
