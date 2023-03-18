@@ -5,7 +5,7 @@ Progetto corso reti di calcolatori
 <p>QHelp nasce in un contensto di pandemia per aiutare la gente bisognosa, chiusa in casa per quarantena domiciliare, al fine di mettersi in contatto con soggetti volontari ai quali richiedere beni di prima necessità. </p>
 
 <h2 align="center">Architetture di riferimento</h2>
-immagine
+![Schema!](SCHEMA.png)
 <h2 align="center">Soddisfacimento dei requisiti</h2>
 
 1. __Il servizio REST che implementate (lo chiameremo SERV) deve offrire a terze parti delle API documentate.__ 
