@@ -20,4 +20,4 @@ jobs:
     - name: dove sono
       run: ls
     - name: run test
-      run: npm run
+      run: npm test
